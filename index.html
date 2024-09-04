@@ -45,61 +45,73 @@
     <section class="special-promo">
         <div class="promo-content">
           <h2>Promoção Especial</h2>
-          <p>Aproveite nosso Donut exclusivo com 50% de desconto!</p>
+          <p>Aproveite nosso Donut exclusivo com <strong>50% de desconto!</strong></p>
           <div class="promo-details">
             <div class="promo-text">
-              <h3>Donut de Morango com Cobertura de Chocolate</h3>
+              <h3>Donut de Chocolate com Cobertura de Morango</h3>
               <p>Delicie-se com o sabor irresistível do nosso donut especial. Oferta válida até o final do mês!</p>
               <button>Comprar Agora</button>
             </div>
             <div class="promo-image">
-              <img src="caminho/para/imagem.jpg" alt="Donut de Morango">
+              <img src="assets/img/donutm.jpg" alt="Donut de Morango">
             </div>
           </div>
         </div>
       </section>
       
-      <section class="stores">
-        <div class="stores-content">
-          <h2>Lojas</h2>
-          <div class="store-cards">
-            <div class="store-card">
-              <img src="assets/img/lojas.jpg" alt="Imagem de Loja">
-              <h3>Nossas Lojas</h3>
-              <p>Visite nossas lojas físicas e aproveite as melhores ofertas.</p>
-              <button>Ver Mais</button>
-            </div>
-            <div class="store-card">
-              <img src="assets/img/delivery.jpg" alt="Imagem de Delivery">
-              <h3>Delivery</h3>
-              <p>Receba seus donuts favoritos no conforto da sua casa.</p>
-              <button>Peça Agora</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <section class="menu">
         <div class="menu-content">
           <h2>Nosso Cardápio</h2>
           <div class="menu-items">
             <div class="menu-item">
-              <img src="caminho/para/imagem1.jpg" alt="Item 1">
-              <h3>Donut Clássico</h3>
-              <p>Delicioso donut tradicional coberto com açúcar.</p>
-              <span>R$ 5,00</span>
+              <img src="assets/img/lojas.jpg" alt="Combo de Sabores Naturais">
+              <div class="menu-item-content">
+                <h3>Combo de Sabores Naturais (Uni 8)</h3>
+                <p>Experimente a pureza dos sabores naturais em cada mordida! Um combo com 8 donuts deliciosamente frescos e sem adição de açúcares artificiais. Perfeito para quem busca sabor autêntico e natural.</p>
+                <span>R$ 50,00</span>
+                <button>Comprar Agora</button>
+              </div>
             </div>
             <div class="menu-item">
-              <img src="caminho/para/imagem2.jpg" alt="Item 2">
-              <h3>Donut de Chocolate</h3>
-              <p>Donut com cobertura de chocolate belga.</p>
-              <span>R$ 7,00</span>
+              <img src="assets/img/chocomora.jpg" alt="Combo de Chocolate e Morango">
+              <div class="menu-item-content">
+                <h3>Combo de Chocolate e Morango (Uni 8)</h3>
+                <p>Delicie-se com a combinação perfeita de chocolate belga e morangos suculentos. Este combo traz 8 donuts irresistíveis, com uma cobertura cremosa que derrete na boca e um toque de frescor frutado.</p>
+                <span>R$ 7,00</span>
+                <button>Comprar Agora</button>
+              </div>
             </div>
             <div class="menu-item">
-              <img src="caminho/para/imagem3.jpg" alt="Item 3">
-              <h3>Donut de Morango</h3>
-              <p>Donut recheado com creme de morango fresco.</p>
-              <span>R$ 6,00</span>
+              <img src="assets/img/variados.jpg" alt="Combo de Sabores Variados">
+              <div class="menu-item-content">
+                <h3>Combo de Sabores Variados (Uni 8)</h3>
+                <p>Descubra um mundo de sabores em um só combo! Com 8 donuts recheados de morango, chocolate, creme e doce de leite, cada mordida será uma nova e deliciosa surpresa.</p>
+                <span>R$ 6,00</span>
+                <button>Comprar Agora</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section class="stores">
+        <div class="stores-content">
+          <h2>Lojas</h2>
+          <div class="store-cards">
+            <div class="store-card">
+              <img src="assets/img/lojas r.png" alt="Imagem de Loja">
+              <h3>Nossa Loja</h3>
+              <p>Visite nossas lojas físicas e aproveite as melhores ofertas.</p>
+              <button>Ver Mais</button>
+            </div>
+            <div class="store-card">
+              <img src="assets/img/delivery r.png" alt="Imagem de Delivery">
+              <h3>Delivery</h3>
+              <p>Receba seus donuts favoritos no conforto da sua casa.</p>
+              <button>Peça Agora</button>
             </div>
           </div>
         </div>
@@ -116,6 +128,33 @@
           </p>
         </div>
       </section>
+
+      <section class="contact">
+        <div class="contact-content">
+          <h2>Envie-nos um Email</h2>
+          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Nome:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Assunto:</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensagem:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+      
+      
       
       <footer class="footer">
         <div class="footer-content">
@@ -127,10 +166,9 @@
           </div>
           <div class="social-media">
             <h3>Siga-nos</h3>
-            <a href="https://facebook.com/mrdonut" target="_blank" aria-label="Facebook"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="https://instagram.com/mrdonut" target="_blank" aria-label="Instagram"><img src="instagram-icon.png" alt="Instagram"></a>
-            <a href="https://twitter.com/mrdonut" target="_blank" aria-label="Twitter"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="https://linkedin.com/company/mrdonut" target="_blank" aria-label="LinkedIn"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="https://facebook.com/mrdonut" target="_blank" aria-label="Facebook"><img src="assets/icons/facebook (2).png" alt="Facebook"></a>
+            <a href="https://instagram.com/mrdonut" target="_blank" aria-label="Instagram"><img src="assets/icons/instagram (2).png" alt="Instagram"></a>
+            <a href="https://twitter.com/mrdonut" target="_blank" aria-label="Twitter"><img src="assets/icons/twitter (2).png" alt="Twitter"></a>
           </div>
           <div class="footer-links">
             <h3>Links Úteis</h3>
