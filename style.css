@@ -179,9 +179,9 @@ nav ul li a:hover {
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
 }
 
-button {
+.highlight-message button {
   padding: 8px 18px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   background-color: #F8BBD0;
   color: rgb(0, 0, 0);
@@ -191,7 +191,7 @@ button {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+.highlight-message button:hover {
   color: #000000;
   background-color: #B3E5FC;
   transform: scale(1.05);
