@@ -68,111 +68,235 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Estilos para o Header */
 header {
-    position: relative;
-    height: 100vh;
-    color: white;
-    background: none;
-    overflow: hidden;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra interna sutil */
+  position: relative;
+  height: 100vh;
+  color: white;
+  background: none;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra interna sutil */
 }
 
 header video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Fica atrás de tudo */
 }
 
 header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    transition: background 0.3s ease; /* Transição suave para o fundo */
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease; /* Transição suave para o fundo */
+  z-index: 1; /* Fica atrás do menu e do texto */
 }
 
 header:hover::before {
-    background: rgba(0, 0, 0, 0.6); /* Escurecimento ao passar o mouse */
+  background: rgba(0, 0, 0, 0.6); /* Escurecimento ao passar o mouse */
 }
 
 nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 30px 0;
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 30px 0;
+  z-index: 3; /* Fica acima do texto */
 }
 
 nav ul {
-    list-style-type: none;
-    display: inline-block;
+  list-style-type: none;
+  display: inline-block;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 20px;
+  display: inline;
+  margin: 0 20px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #F8BBD0;
-    text-shadow: 0 0 10px rgba(245, 91, 219, 0.733);
+  color: #F8BBD0;
+  text-shadow: 0 0 10px rgba(245, 91, 219, 0.733);
 }
 
 .highlight-message {
-    position: absolute;
-    top: 45%;
-    left: 5%; /* Alinhamento mais à esquerda */
-    width: 60%; /* O texto ocupará 60% da tela */
-    transform: translateY(-50%);
-    z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%; /* Ajustar a largura */
+  transform: translate(-50%, -50%); /* Centralizar vertical e horizontalmente */
+  z-index: 2; /* Fica atrás do menu */
+  text-align: center; /* Centralizar o texto */
 }
 
 .highlight-message h1 {
-    font-size: 36px; /* Tamanho da fonte reduzido */
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-size: 36px; /* Tamanho da fonte reduzido */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .highlight-message p {
-    font-size: 20px; /* Tamanho da fonte reduzido */
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+  font-size: 20px; /* Tamanho da fonte reduzido */
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
 }
 
 button {
-    padding: 8px 18px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: #F8BBD0;
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 8px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #F8BBD0;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    color: #000000;
-    background-color: #B3E5FC;
-    transform: scale(1.05);
+  color: #000000;
+  background-color: #B3E5FC;
+  transform: scale(1.05);
+}
+
+/* Estilos para o Menu Hambúrguer */
+.hamburger {
+  display: none; /* Ocultar o menu hambúrguer por padrão */
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1002; /* Garantir que o menu fique sobre o vídeo e outros elementos */
+  position: fixed; /* Fixar o menu na tela */
+  top: 20px; /* Ajustar a distância do topo */
+  right: 20px; /* Ajustar a distância da borda direita */
+}
+
+.hamburger span {
+  background-color: white;
+  border-radius: 5px;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mostrar o menu hambúrguer em telas menores */
+@media (max-width: 768px) {
+  .hamburger {
+      display: flex;
+  }
+
+  .mobile-menu {
+      display: none; /* Ocultar o menu mobile por padrão */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: fixed; /* Fixar o menu na tela */
+      top: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      height: 100%; /* Fazer o menu ocupar a tela inteira */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      z-index: 1001; /* Garantir que o menu fique sobre o vídeo e outros elementos */
+      overflow-y: auto; /* Permitir rolar o menu se necessário */
+      transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave */
+      opacity: 0; /* Inicialmente invisível */
+      visibility: hidden; /* Inicialmente invisível */
+  }
+
+  .mobile-menu.active {
+      display: block; /* Exibir o menu quando a classe 'active' for adicionada */
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .mobile-menu li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .mobile-menu a {
+      display: block;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+      transition: background 0.3s ease;
+  }
+
+  .mobile-menu a:hover {
+      background-color: #F8BBD0;
+  }
+
+  /* Ajustes para o texto no header em dispositivos móveis */
+  .highlight-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 90%; /* Ajustar a largura para se ajustar melhor na tela móvel */
+      transform: translate(-50%, -50%); /* Centralizar vertical e horizontalmente */
+      text-align: center; /* Centralizar o texto */
+      z-index: 2; /* Fica atrás do menu */
+  }
+
+  .highlight-message h1 {
+      font-size: 28px; /* Ajustar o tamanho da fonte */
+  }
+
+  .highlight-message p {
+      font-size: 18px; /* Ajustar o tamanho da fonte */
+  }
+}
+
+/* Animação para o menu hambúrguer */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -7px);
 }
 
 .special-promo {
@@ -188,558 +312,551 @@ button:hover {
   overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
 }
 
+.promo-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  
-  .promo-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .special-promo h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    color: #fa2c74;
-    text-transform: uppercase;
-  }
-  
-  .special-promo p {
-    font-size: 22px;
-    margin-bottom: 40px;
-    color: #121212;
+.special-promo h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #fa2c74;
+  text-transform: uppercase;
+}
+
+.special-promo p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: #121212;
+}
+
+.special-promo p strong {
+  color: #fa2c74;
+}
+
+.promo-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.promo-text {
+  max-width: 50%;
+  text-align: left;
+}
+
+.promo-text h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fa2c74;
+}
+
+.promo-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #121212;
+}
+
+.promo-text button {
+  background-color: #fa2c74;
+  color: #fff;
+  border: 1px solid #fa2c74; /* Adiciona uma borda fina na cor do botão */
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.promo-text button:hover {
+  background-color: #B3E5FC; /* Cor de fundo no hover */
+  color: #121212; /* Cor do texto no hover */
+  transform: scale(1.05); /* Efeito de escala no hover */
+  border-color: #121212; /* Cor da borda no hover */
+}
+
+.promo-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .special-promo {
+    padding: 40px 0; /* Reduzir o padding vertical para dispositivos móveis */
   }
 
-  .special-promo p strong {
-    color: #fa2c74;
-  }
-  
   .promo-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .promo-text {
-    max-width: 50%;
-    text-align: left;
-  }
-  
-  .promo-text h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #fa2c74;
-  }
-  
-  .promo-text p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #121212;
-  }
-  
-  .promo-text button {
-    background-color: #fa2c74;
-    color: #fff;
-    border: 1px solid #fa2c74; /* Adiciona uma borda fina na cor do botão */
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin-top: 15px;
-  }
-  
-  .promo-text button:hover {
-    background-color: #B3E5FC; /* Cor de fundo no hover */
-    color: #121212; /* Cor do texto no hover */
-    transform: scale(1.05); /* Efeito de escala no hover */
-    border-color: #121212; /* Cor da borda no hover */
-  }
-  
-  .promo-image img {
-    width: 350px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    .promo-details {
-      flex-direction: column;
-    }
-    
-    .promo-text {
-      max-width: 100%;
-      text-align: center;
-    }
-    
-    .promo-image img {
-      width: 100%;
-      margin-top: 20px;
-    }
-  }
-  
-
-
-
-
-  .menu {
-    background: rgb(179,229,252);
-    background: linear-gradient(170deg, rgba(179,229,252,1) 0%, rgba(179,229,252,1) 40%, rgba(248,187,208,1) 63%, rgba(248,187,208,1) 100%);
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  .menu-content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 60px; /* Adiciona padding nas laterais */
-  }
-  
-  .menu h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-    color: #fa2c74;
-  }
-  
-  .menu-items {
-    display: flex;
     flex-direction: column;
-    gap: 40px;
+    align-items: center; /* Centraliza os itens */
+    gap: 20px; /* Reduz o espaço entre os itens */
   }
-  
+
+  .promo-text {
+    max-width: 90%; /* Aumenta a largura máxima para dispositivos móveis */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .promo-text h3 {
+    font-size: 28px; /* Reduz o tamanho da fonte do título */
+  }
+
+  .promo-text p {
+    font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
+    margin-bottom: 20px; /* Reduz o espaço inferior */
+  }
+
+  .promo-image img {
+    width: 100%; /* Ajusta a largura da imagem para 100% */
+    border-radius: 10px; /* Reduz o raio da borda */
+    box-shadow: none; /* Remove a sombra */
+    margin-top: 20px; /* Ajusta a margem superior */
+  }
+}
+
+.menu {
+  background: rgb(179,229,252);
+  background: linear-gradient(170deg, rgba(179,229,252,1) 0%, rgba(179,229,252,1) 40%, rgba(248,187,208,1) 63%, rgba(248,187,208,1) 100%);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.menu-content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.menu h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #fa2c74;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.menu-item {
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ajuste para ocupar a largura completa */
+}
+
+.menu-item img {
+  width: 20%; /* Ajuste a largura da imagem conforme necessário */
+  border-radius: 10px;
+  margin-right: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.menu-item-content {
+  text-align: left;
+  flex: 1;
+  max-width: 45%; /* Limite máximo de largura do texto */
+}
+
+.menu-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fa2c74;
+}
+
+.menu-item p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #121212;
+  line-height: 1.4;
+}
+
+.menu-item span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fa2c74;
+  margin-top: 10px;
+  display: block;
+}
+
+.menu-item button {
+  background-color: #fa2c74;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.menu-item button:hover {
+  background-color: #B3E5FC;
+  color: #121212;
+}
+
+@media (max-width: 768px) {
+  .menu-items {
+    flex-direction: column;
+  }
+
   .menu-item {
-    background-color: #f7f7f7;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: left;
-    width: 100%; /* Ocupa toda a largura disponível */
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .menu-item img {
-    width: 250px; /* Aumenta o tamanho da imagem */
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .menu-item-content {
-    flex: 1;
-    max-width: 600px; /* Limita a largura máxima do texto */
-  }
-  
-  .menu-item h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #fa2c74;
-  }
-  
-  .menu-item p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #121212;
-    line-height: 1.4; /* Ajusta o espaçamento entre linhas */
-  }
-  
-  .menu-item span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fa2c74;
-    margin-top: 10px;
-    display: block;
-  }
-  
-  .menu-item button {
-    background-color: #fa2c74;
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-  }
-  
-  .menu-item button:hover {
-    background-color: #B3E5FC;
-    color: #121212;
-  }
-  
-  @media (max-width: 768px) {
-    .menu-item {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .menu-item img {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .menu-item-content {
-      max-width: 100%; /* Remover limite de largura em telas pequenas */
-    }
-  }
-  
-  
-  
-
-
-
-
-
-
-
-  .stores {
-    background-image: url(assets/img/f\ donut.png); /* Substitua pelo caminho da sua imagem */
-    background-size: cover; /* Ajusta a imagem para cobrir toda a área do elemento */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-    background-attachment: fixed; /* Cria o efeito de parallax */
-    padding: 60px 0;
+    flex-direction: column;
     text-align: center;
-    position: relative; /* Necessário para o efeito de parallax */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
-    color: #F8BBD0; /* Mantenha a cor do texto ou ajuste conforme necessário */
   }
-  
-  .stores-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative; /* Garante que o conteúdo esteja sobre a imagem de fundo */
+
+  .menu-item img {
+    width: 100%;
+    margin-right: 0; /* Remova a margem lateral na versão mobile */
+    margin-bottom: 20px; /* Espaço entre a imagem e o conteúdo na versão mobile */
   }
-  
-  .stores h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-    color: #333;
+
+  .menu-item-content {
+    text-align: center;
+    width: 100%;
+    max-width: 100%; /* Remova o limite máximo na versão mobile */
   }
-  
+}
+
+.stores {
+  background-image: url(assets/img/f\ donut.png); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Ajusta a imagem para cobrir toda a área do elemento */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-attachment: fixed; /* Cria o efeito de parallax */
+  padding: 60px 0;
+  text-align: center;
+  position: relative; /* Necessário para o efeito de parallax */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
+  color: #F8BBD0; /* Mantenha a cor do texto ou ajuste conforme necessário */
+}
+
+.stores-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative; /* Garante que o conteúdo esteja sobre a imagem de fundo */
+}
+
+.stores h2 {
+  font-size: 36px; /* Ajustar o tamanho da fonte para telas menores */
+  margin-bottom: 30px; /* Ajustar o espaço inferior */
+  color: #333;
+}
+
+.store-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Reduzir o espaçamento entre os cards */
+  flex-wrap: wrap; /* Permite que os cards envolvam para a linha seguinte se necessário */
+}
+
+.store-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Faz com que os cards ocupem a largura total disponível */
+  max-width: 300px; /* Limita a largura máxima dos cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+}
+
+.store-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.store-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.store-card h3 {
+  font-size: 22px; /* Ajustar o tamanho da fonte do título para telas menores */
+  margin-bottom: 15px; /* Ajustar o espaço inferior */
+  color: #444;
+}
+
+.store-card p {
+  font-size: 14px; /* Ajustar o tamanho da fonte do parágrafo */
+  margin-bottom: 20px; /* Ajustar o espaço inferior */
+  color: #121212;
+}
+
+.store-card button {
+  background-color: #fa2c74;
+  color: #fff;
+  border: none;
+  padding: 10px 20px; /* Ajustar o padding para tamanhos menores */
+  font-size: 14px; /* Ajustar o tamanho da fonte do botão */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.store-card button:hover {
+  background-color: #B3E5FC;
+  color: #121212;
+}
+
+@media (max-width: 768px) {
   .store-cards {
-    display: flex;
-    justify-content: center;
-    gap: 60px; /* Espaçamento entre os cards */
+      flex-direction: column;
+      align-items: center;
   }
   
   .store-card {
-    background-color: #ffffff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: none; /* Remover o limite máximo de largura em dispositivos móveis */
   }
-  
-  .store-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.our-story {
+  background-color: #121212;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.story-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.our-story h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.our-story p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .our-story {
+      padding: 60px 0; /* Reduz o padding para telas menores */
   }
-  
-  .store-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
+
+  .our-story h2 {
+      font-size: 32px; /* Reduz o tamanho da fonte para títulos em telas menores */
+      margin-bottom: 30px; /* Ajusta o espaçamento inferior */
   }
-  
-  .store-card h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #444;
+
+  .our-story p {
+      font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
+      margin-bottom: 15px; /* Ajusta o espaçamento inferior */
   }
-  
-  .store-card p {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: #121212;
+
+  .story-content {
+      padding: 0 15px; /* Ajusta o padding para garantir espaçamento lateral adequado em telas menores */
   }
-  
-  .store-card button {
-    background-color: #fa2c74;
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+}
+
+.contact {
+  background-image: url('assets/img/f\ donut.png'); /* Substitua pelo caminho da sua imagem */
+  background-attachment: fixed; /* Cria o efeito parallax */
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  padding: 60px 20px;
+  color: #fff; /* Cor do texto em contraste com o fundo */
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semitransparente para melhor contraste */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff; /* Cor do texto para contraste com o fundo */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #fff; /* Cor do texto do rótulo */
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #fa2c74;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c91c5c;
+}
+
+@media (max-width: 768px) {
+  .contact {
+      padding: 40px 15px; /* Reduz o padding para dispositivos móveis */
   }
-  
-  .store-card button:hover {
-    background-color: #B3E5FC;
-    color: #121212;
+
+  .contact h2 {
+      font-size: 28px; /* Ajusta o tamanho da fonte para telas menores */
   }
-  
-  @media (max-width: 768px) {
-    .store-cards {
+
+  .contact-content {
+      padding: 20px; /* Ajusta o padding do conteúdo para telas menores */
+  }
+
+  button {
+      padding: 10px 20px; /* Reduz o tamanho do botão para telas menores */
+  }
+}
+
+.footer {
+  background-color: #121212;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-info,
+.social-media,
+.footer-links,
+.faq {
+  flex: 1;
+  margin: 10px;
+}
+
+.contact-info h3,
+.social-media h3,
+.footer-links h3,
+.faq h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-info p,
+.footer-links ul,
+.faq ul {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.footer-links ul,
+.faq ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.faq li {
+  margin: 5px 0;
+}
+
+.footer-links a,
+.faq a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.faq a:hover {
+  text-decoration: underline;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
       flex-direction: column;
       align-items: center;
-    }
-    
-    .store-card {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-  .our-story {
-    background-color: #121212;
-    padding: 80px 0;
-    text-align: center;
-  }
-  
-  .story-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .our-story h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-    color: #ffffff;
-  }
-  
-  .our-story p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .story-content {
-      padding: 0 20px;
-    }
-  }
-
-  
-
-
-
-
-
-
-
-
-
-  .contact {
-    background-image: url('assets/img/f\ donut.png'); /* Substitua pelo caminho da sua imagem */
-    background-attachment: fixed; /* Cria o efeito parallax */
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-    padding: 60px 20px;
-    color: #fff; /* Cor do texto em contraste com o fundo */
-  }
-  
-  .contact-content {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semitransparente para melhor contraste */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contact h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #fff; /* Cor do texto para contraste com o fundo */
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #fff; /* Cor do texto do rótulo */
-  }
-  
-  .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-  }
-  
-  button {
-    background-color: #fa2c74;
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #c91c5c;
-  }
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .footer {
-    background-color: #121212;
-    color: #fff;
-    padding: 40px 0;
-    text-align: center;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
   
   .contact-info,
   .social-media,
   .footer-links,
   .faq {
-    flex: 1;
-    margin: 10px;
-  }
-  
-  .contact-info h3,
-  .social-media h3,
-  .footer-links h3,
-  .faq h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .contact-info p,
-  .footer-links ul,
-  .faq ul {
-    font-size: 16px;
-    margin: 5px 0;
-  }
-  
-  .footer-links ul,
-  .faq ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links li,
-  .faq li {
-    margin: 5px 0;
-  }
-  
-  .footer-links a,
-  .faq a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-links a:hover,
-  .faq a:hover {
-    text-decoration: underline;
-  }
-  
-  .social-media a {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  .social-media img {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-  }
-  
-  .footer-bottom {
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .contact-info,
-    .social-media,
-    .footer-links,
-    .faq {
       margin: 10px 0;
-    }
   }
+}
+
+/* Barra de rolagem personalizada para Webkit */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: #B3E5FC; /* Cor do trilho da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F8BBD0; /* Cor do polegar da barra de rolagem */
+  border-radius: 2px; /* Cantos arredondados do polegar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fc85ae; /* Cor do polegar ao passar o mouse */
+}
   
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-

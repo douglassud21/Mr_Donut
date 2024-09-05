@@ -8,7 +8,7 @@
     <title>Mr Donut</title>
 </head>
 <body>
-    <header>
+    <header id="home">
         <video id="video1" autoplay muted>
             <source src="assets/videos/7033923-hd_1280_720_25fps.mp4" type="video/mp4">
             Seu navegador não suporta a reprodução de vídeos.
@@ -19,19 +19,21 @@
         </video>
         <nav>
             <!-- Início do Menu Hambúrguer Mobile -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="mobile-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#of">Ofertas</a></li>
-                <li><a href="#about">Lojas</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#history">Nossa Historia</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
+            <!-- Menu Hambúrguer -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="mobile-menu" id="mobile-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#of">Ofertas</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">Lojas</a></li>
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="#history">Nossa História</a></li>
+        </ul>
             <!-- Fim do Menu Hambúrguer Mobile -->
         </nav>
         <div class="highlight-message">
@@ -42,7 +44,7 @@
         </div>
     </header>
 
-    <section class="special-promo">
+    <section class="special-promo" id="of">
         <div class="promo-content">
           <h2>Promoção Especial</h2>
           <p>Aproveite nosso Donut exclusivo com <strong>50% de desconto!</strong></p>
@@ -58,10 +60,8 @@
           </div>
         </div>
       </section>
-      
-      
 
-      <section class="menu">
+      <section class="menu" id="menu">
         <div class="menu-content">
           <h2>Nosso Cardápio</h2>
           <div class="menu-items">
@@ -96,8 +96,7 @@
         </div>
       </section>
       
-      
-      <section class="stores">
+      <section class="stores" id="about">
         <div class="stores-content">
           <h2>Lojas</h2>
           <div class="store-cards">
@@ -117,7 +116,7 @@
         </div>
       </section>
 
-      <section class="our-story">
+      <section class="our-story" id="history">
         <div class="story-content">
           <h2>Nossa História</h2>
           <p>
@@ -129,7 +128,7 @@
         </div>
       </section>
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="contact-content">
           <h2>Envie-nos um Email</h2>
           <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
@@ -153,9 +152,7 @@
           </form>
         </div>
       </section>
-      
-      
-      
+
       <footer class="footer">
         <div class="footer-content">
           <div class="contact-info">
@@ -195,12 +192,6 @@
         </div>
       </footer>
       
-      
-      
-      
-      
-      
-
     <script src="script.js"></script>
 </body>
 </html>
